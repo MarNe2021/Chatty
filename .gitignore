@@ -1,0 +1,9 @@
+# chatty/.gitignore
+
+# Editor-spezifische Ordner (falls du z.B. VS Code nutzt)
+.vscode/
+.idea/
+
+# Betriebssystem-Restmüll
+.DS_Store
+Thumbs.db
