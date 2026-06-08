@@ -69,7 +69,7 @@ class Orchestrator():
 
             if "contentBlockDelta" in event:
                 text_chunk = event["contentBlockDelta"]["delta"]["text"]
-                yield f"event: text\ndata: {text_chunk}\n\n"
+                yield f"event: text\ndata: {json.dumps(text_chunk)}\n\n"
 
             elif "metadata" in event:
                 metrics_dict = event["metadata"]["usage"]

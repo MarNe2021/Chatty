@@ -14,11 +14,13 @@
     "react-dom": "^19",
     "react-hook-form": "^7.77.0",
     "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/bun": "latest",
     "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@types/bun": "latest"
+    "@types/react-dom": "^19"
   }
 }
