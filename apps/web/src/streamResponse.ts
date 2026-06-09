@@ -50,6 +50,7 @@ export async function streamResponse(
             const metrics = JSON.parse(dataLine);
             setValue("inputTokens", metrics.inputTokens);
             setValue("outputTokens", metrics.outputTokens);
+            setValue("totalCosts", (metrics.inputTokens * 3 + metrics.outputTokens *15) /10**6)
           } catch (e) {
             console.error("Fehler beim Parsen der Metriken", e);
           }

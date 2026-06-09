@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
-from typing import List, Any
+from typing import List, Any, Optional
 import logging
 
 
@@ -25,7 +25,7 @@ class IChat(BaseModel):
     timestamp:int
     date:str
     messages:List[IMessage]
-    model:str
+    model: Optional[str] = None
     contextHorizont:int
     temperatur:float
     inputTokens:int
@@ -40,4 +40,4 @@ class IChat(BaseModel):
 async def converse(request:Request, payload:IChat):
 
     orchestrator = request.app.state.orchestrator
-    return StreamingResponse(content=orchestrator.invoke(payload.dict()), media_type="text/event-stream")
+    return StreamingResponse(content=orchestrator.invoke(payload), media_type="text/event-stream")
